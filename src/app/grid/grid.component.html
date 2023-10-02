@@ -1,0 +1,15 @@
+<button (click)="add()">add item</button>
+<button (click)="delete()">remove item</button>
+<button (click)="change()">modify item</button>
+<button (click)="createComponent('Welcome Foo ! ')">Welcome</button>
+<div class="grid-stack">
+        <ng-container *ngFor="let item of widgets" >
+            <div class="grid-stack-item"  [attr.gs-w]="item.tile.w" [attr.gs-h]="item.tile.h">
+                <div class="grid-stack-item-content">
+                    <div #ble>{{item.w}}</div>
+                    <ng-container [cdkPortalOutlet]="item.portal"></ng-container>
+                </div>
+            </div>
+        </ng-container>
+
+</div>
